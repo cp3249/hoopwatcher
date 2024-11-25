@@ -1,0 +1,65 @@
+.root {
+    -fx-background-color: linear-gradient(to bottom, #1E2739, #1A2333);
+    -fx-background-image: url("background.png");
+    -fx-background-size: cover; 
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #4DA6FF;
+    -fx-padding: 5px 15px;
+    -fx-border-radius: 0px; 
+    -fx-cursor: hand;
+}
+
+.nav-button .text {
+    -fx-fill: #4DA6FF;
+}
+
+.nav-button:hover {
+    -fx-background-color: #283851;
+}
+
+.input-field {
+    -fx-background-color: #1a2333bd;
+    -fx-text-fill: #FFFFFF;
+    -fx-prompt-text-fill: #e7e7e7; 
+    -fx-padding: 8px;
+    -fx-border-radius: 0px;
+    -fx-border-color: #244963; 
+    -fx-border-width: 1px;
+}
+
+.input-field:focused {
+    -fx-border-color: #244963; 
+    -fx-border-width: 1px;
+}
+
+.search-button {
+    -fx-background-color: #1a2333bd;
+    -fx-text-fill: white;
+    -fx-padding: 8px 15px;
+    -fx-border-radius: 1px;
+    -fx-cursor: hand;
+}
+
+.search-button:hover {
+    -fx-background-color: #8CCFFF;
+}
+
+.list-view {
+    -fx-text-fill: white;
+    -fx-background-color: #1a2333bd;
+    -fx-border-color: #244963; 
+    -fx-border-width: 1px;
+    -fx-padding: 10px; 
+}
+
+.list-view .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+}
+.list-view .list-cell:selected {
+    -fx-background-color: transparent; 
+    -fx-text-fill: #4DA6FF;
+}

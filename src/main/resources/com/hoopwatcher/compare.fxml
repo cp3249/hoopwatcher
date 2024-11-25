@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.StackPane?> 
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hoopwatcher.CompareController" styleClass="root">
+    <top>
+        <HBox alignment="CENTER" spacing="30" style="-fx-background-color: #141414; -fx-padding: 10px;">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <children>
+                <ImageView fitHeight="35" fitWidth="35" preserveRatio="true"> <image>   <Image url="@compare.png" /> </image> </ImageView>
+                <Text text="NBA Player Similarity Finder" fill="#4DA6FF" style="-fx-font-weight: bold;"/>
+                <Button onAction="#closeApp" styleClass="nav-button"> <graphic> <ImageView fitHeight="35" fitWidth="35" preserveRatio="true"> <image>  <Image url="@shutdown.png" /> </image> </ImageView> </graphic> <text>Exit</text> </Button>
+            </children>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="10" alignment="CENTER">
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="10"/>
+            </padding>
+            <HBox alignment="CENTER" spacing="10">
+                <ComboBox fx:id="playerYear" promptText="Year" styleClass="input-field"/>
+                <TextField fx:id="playerName" promptText="Player Name" styleClass="input-field" HBox.hgrow="ALWAYS"/>
+                <Button text="Search" onAction="#searchPlayer" styleClass="search-button"/>
+            </HBox>
+            <ListView fx:id="playerList" styleClass="list-view" VBox.vgrow="ALWAYS" maxWidth="600" maxHeight="225"/>
+            <HBox spacing="10" alignment="CENTER">
+                <VBox spacing="5" HBox.hgrow="ALWAYS" alignment="TOP_CENTER">
+                    <StackPane> 
+                        <VBox style="-fx-background-color: #1a2333bd; -fx-padding: 5px; -fx-background-radius: 10px;"  alignment="CENTER" StackPane.alignment="CENTER" maxWidth="100">
+                        <ImageView fx:id="PlayerImage" fitHeight="115" fitWidth="110" preserveRatio="true"/>
+                        </VBox>
+                    </StackPane>
+                    <Text fx:id="playerNameText" fill="#FFFFFF" style="-fx-font-size: 16px;"/>
+                    <Text fx:id="yearText" fill="#FFFFFF"/>
+                    <HBox spacing="5" alignment="CENTER">
+                        <GridPane vgap="5" hgap="10" alignment="CENTER_LEFT">
+                        
+                            <Text text="PPG:" fill="#FFFFFF" style="-fx-font-weight: bold;" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                            <Text fx:id="pointsText" fill="#FFFFFF" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                            <Text text="APG:" fill="#FFFFFF" style="-fx-font-weight: bold;" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                            <Text fx:id="assistsText" fill="#FFFFFF" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                            <Text text="RPG:" fill="#FFFFFF" style="-fx-font-weight: bold;" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                            <Text fx:id="reboundsText" fill="#FFFFFF" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+                            <Text text="SPG:" fill="#FFFFFF" style="-fx-font-weight: bold;" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+                            <Text fx:id="stealsText" fill="#FFFFFF" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+                            <Text text="BPG:" fill="#FFFFFF" style="-fx-font-weight: bold;" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+                            <Text fx:id="blocksText" fill="#FFFFFF" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+                        </GridPane>
+                        <VBox spacing="7" alignment="CENTER">
+                            <Text text="TEAM:" style="-fx-font-weight: bold;" fill="#FFFFFF"/>
+                            <Text fx:id="teamNameText" fill="#FFFFFF"/>
+                            <Text text="POSITION:" style="-fx-font-weight: bold;" fill="#FFFFFF"/>
+                            <Text fx:id="positionText" fill="#FFFFFF"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+                <ListView fx:id="similarPlayers" orientation="VERTICAL" HBox.hgrow="NEVER" prefWidth="360" styleClass="list-view"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
