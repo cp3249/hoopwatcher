@@ -16,7 +16,7 @@ Comparison tool to view players from 2000 to 2024 and find similar players based
   
 ### Usage
 
-![](https://github.com/hoopwatcher/example.gif)
+![](https://github.com/cp3249/hoopwatcher/blob/main/example.gif)
 
 1. **Select a year** from the dropdown menu.
 2. **Enter a player name** in the search field.
